@@ -1,8 +1,8 @@
 import React,{useContext,useEffect} from 'react';
 import { store } from '../context/store';
 
-const SingleProduct = () => {
-  const {productArray,setCart,cart} = useContext(store);
+const SingleProduct = ({product}) => {
+  const {setCart,cart} = useContext(store);
 
   const setToCart = (product) =>{
     product.isAddedToCart = true;
@@ -16,7 +16,6 @@ const SingleProduct = () => {
     // IT WILL SHOW THE UPDATED OBJ IF I TRY IT OUTSIDE THEN IT WILL BEHAVE AS EXPECTED
   };
 
-
   const removeFromCart = (product) =>{
     product.isAddedToCart = false;
     setCart((cart)=>(
@@ -25,22 +24,15 @@ const SingleProduct = () => {
       ))
     ))
   }
-
   return (
-    <>
-      {
-      productArray.map((product)=>(
-        <div key={product.id}>
-          <img src={product.image} alt="product"/>
-          <div><h3>{product.name}</h3><h4>{product.price}</h4></div>
-          <h1>{product.id}</h1>
-          {product.isAddedToCart?
-          <button onClick={()=>{removeFromCart(product)}}>Remove from cart</button>
-          :<button onClick={()=>{setToCart(product)}}>Add to cart</button>}
-        </div>
-      ))
-      }
-    </>
+    <div key={product.id}>
+      <img src={product.image} alt="product"/>
+      <div><h3>{product.name}</h3><h4>{product.price}</h4></div>
+      <h1>{product.id}</h1>
+      {product.isAddedToCart?
+      <button onClick={()=>{removeFromCart(product)}}>Remove from cart</button>
+      :<button onClick={()=>{setToCart(product)}}>Add to cart</button>}
+    </div>
   )
 }
 

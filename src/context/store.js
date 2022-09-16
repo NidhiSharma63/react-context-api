@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { createContext } from "react";
 import { faker } from '@faker-js/faker';
 
-faker.seed(123);
-
 
 const productArray = [...Array(30)].map(()=>({
   id:faker.datatype.uuid(),

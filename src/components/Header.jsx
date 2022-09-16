@@ -1,5 +1,7 @@
 import React,{ useContext } from 'react';
 import { store } from '../context/store';
+import { Link } from 'react-router-dom';
+
 
 const Header = () => {
   const {cart} = useContext(store);
@@ -7,8 +9,8 @@ const Header = () => {
     <div>
       <h1>Ecommerce</h1>
       <ul>
-        <li>Home</li>
-        <li>Cart <span>{cart.length}</span></li>
+        <Link to='/'>Home</Link>
+        <Link to='/cart'>Cart <span>{cart.length}</span></Link>
       </ul>
     </div>
   )
