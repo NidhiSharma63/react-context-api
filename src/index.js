@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import NewContext from './context/NewContext';
+import StoreComponent from './context/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NewContext>
+    <StoreComponent>
       <App />
-    </NewContext>
+    </StoreComponent>
   </React.StrictMode>
 );

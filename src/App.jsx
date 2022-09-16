@@ -1,10 +1,15 @@
-import React, { useContext } from 'react';
-import {context} from './context/NewContext';
+import React from 'react';
+import ProductPage from './components/ProductPage';
+import CartPage from './components/CartPage';
+import Header from './components/Header';
 
 const App = () => {
-  const {state} = useContext(context);
   return (
-    <h1>this is a context created by {state.name}</h1>
+    <div>
+      <ProductPage/>
+      <CartPage/>
+      <Header/>
+    </div>
   )
 }
 
