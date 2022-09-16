@@ -6,9 +6,9 @@ import Header from './components/Header';
 const App = () => {
   return (
     <div>
-      <ProductPage/>
-      <CartPage/>
       <Header/>
+      {/* <CartPage/> */}
+      <ProductPage/>
     </div>
   )
 }
